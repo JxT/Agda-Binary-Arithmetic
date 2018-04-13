@@ -1,5 +1,5 @@
 
--- Example implementing binary
+-- Implementing binary
 -- numbers as a list of booleans
 
 open import Data.List
@@ -60,17 +60,9 @@ doubleB (true ∷ xs) = false ∷ true ∷ xs
 -- You can just use the last bit
 
 rem2 : Binary → Binary
-
 rem2 [] = []
-rem2 (false ∷ []) = zeroB
-
-rem2 (true ∷ []) = oneB
-
-rem2 b = rem2  (predB (predB b))
-
--- Subtract by 2 until:
--- rem2 (oneB) - remainder 1
--- rem2 (zeroB) - remainder 0
+rem2 (false ∷ xs) = zeroB
+rem2 (true ∷ xs) = oneB
 
 
 -- Addition with natural numbers

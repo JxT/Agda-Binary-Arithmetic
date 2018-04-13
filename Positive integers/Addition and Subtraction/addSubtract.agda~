@@ -1,16 +1,19 @@
 
--- Addition and subtraction
-
 open import Data.Nat
 open import Relation.Binary.PropositionalEquality
 
-plus : ℕ → ℕ → ℕ  -- \to
-plus zero    y = y
-plus (suc x) y = suc (plus x y)
+-- Addition
 
-minusOne : ℕ → ℕ
-minusOne zero = zero
-minusOne (suc n) = n
+add : ℕ → ℕ → ℕ  -- \to
+add zero y = y
+add (suc x) y = suc (add x y)
+
+-- Subtraction
+
+subtract : ℕ → ℕ → ℕ
+subtract n zero = n
+subtract zero (suc m) = zero
+subtract (suc n) (suc m) = subtract n m
 
 
 -- Lemma for the associativity
